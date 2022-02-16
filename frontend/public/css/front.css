@@ -1,5 +1,5 @@
 .navbar-blur {
-    background-color: #212529d5;
+    background-color: #ffffffd5;
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
 }
