@@ -24,6 +24,8 @@ export async function init (app) {
     app.use(cookieParser());
 
     app.use('/', express.static('frontend/public'));
+    app.use('/file', express.static('uploads'));
+
     app.use('/api', apiRouter);
     app.use('/', mainRouter);
     return app;

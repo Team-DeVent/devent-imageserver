@@ -8,6 +8,6 @@ import { create } from '../controllers/image.ctrl.js';
 
 
 
-router.post('/', upload, create);
+router.post('/', check, upload, create);
 
 export default router;

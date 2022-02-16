@@ -4,7 +4,12 @@ import data from '../config/jwt.js';
 
 
 export async function create (req, res) {
-    res.status(200).json({status:1})
+    console.log(req.file.filename)
+    res.status(200).json({
+        status:1, 
+        filename:req.file.filename, 
+        filesize:req.file.size
+    })
 
     /*
     if (is_revoke.status == 1) {
