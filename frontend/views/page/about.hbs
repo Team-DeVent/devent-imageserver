@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    {{> head}}
+  <body>
+    {{> navbar}}
+
+
+    <header class="bg-white py-5">
+        <div class="container px-5 pt-4 pb-2">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center my-5">
+                        <h1 class="display-5 fw-bolder text-dark font-weight-lg mb-2">소개</h1>
+                        <p class="lead text-dark font-weight-md mb-4" id="intro">이거 어디다 써먹지..? </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    
+    <section class="py-5" id="features">
+        <div class="container px-5 my-5">
+            <div class="row gx-5">
+                <div class="col-lg-12">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                    <h2 class="h4 fw-bolder">이미저 저장의 고난 </h2>
+
+                    <p>하나의 이미지를 저장하기 위해서는 물리적인 서버, 저장소, 코드가 필요합니다.
+                        그래서 대부분 AWS의 이미지 저장공간을 사용하게 됩니다.
+                        그.러.나! 저는 AWS를 쓰지 않고 독자적인 구성으로 이미지를 업로드하고 싶었습니다.
+                        내 손으로 직접 만든, 이미지 서버를요.
+                        <a href="https://github.com/Team-DeVent/devent-frame" target="_blank" rel="noopener noreferrer">데벤트 프레임</a>을 기반으로 호그와트도 울고 갈 이미지 서버를 만들어내게 됩니다!
+                    
+                    (근데 사실 블로그에 이미지 업로드 기능 만들기 귀찮아서 따로 만든거라는 소문이..)
+                    
+                    </p>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+ 
+
+    {{> footer}}
+
+
+  </body>
+</html>

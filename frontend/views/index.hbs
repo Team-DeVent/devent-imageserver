@@ -10,7 +10,7 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-6">
                     <div class="text-center my-5">
-                        <h1 class="display-5 fw-bolder text-dark font-weight-lg mb-2">Image Server</h1>
+                        <h1 class="display-5 fw-bolder text-dark font-weight-lg mb-2">이미지 저장소</h1>
                         <p class="lead text-dark font-weight-md mb-4" id="intro">클라우드 쓰기 번거롭다? 제발 좀 업로드되라? 이런 쓸데없는 걱정 말고 이젠 이미지 서버 하자!</p>
                     </div>
                 </div>
@@ -21,20 +21,76 @@
 
     
     <section class="py-5" id="features">
-        <div class="container px-5 my-5">
+        <div class="container-fluid px-5 my-5">
             <div class="row gx-5">
-                <div class="col-lg-3">
+                <div class="col-lg-5">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                    <h2 class="h4 fw-bolder">Featured title</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                    <a class="text-decoration-none" href="#!">
-                        Call to action
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
+                    <h2 class="h4 fw-bolder">Request</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">type</th>
+                            <th scope="col">name</th>
+                            <th scope="col">sub</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Header</td>
+                                <td>x-access-token</td>
+                                <td>JWT 토큰</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>From Data</td>
+                                <td>image</td>
+                                <td>이미지 폼 데이터</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                    <h2 class="h4 fw-bolder">Response</h2>
+
+                    <pre id="logs" style="white-space: pre-wrap;">
+{
+    "status": 1,
+    "filename": "1644997335705.png",
+    "filesize": 184914
+}
+                    </pre>
+
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
                     <h2 class="h4 fw-bolder">Feed </h2>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                     <div class="mb-3">
                         <textarea class="form-control form-textarea color-gray-100" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -48,15 +104,6 @@
 
                     </pre>
                 </div>
-                <div class="col-lg-3">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                    <h2 class="h4 fw-bolder">Featured title</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                    <a class="text-decoration-none" href="#!">
-                        Call to action
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -66,42 +113,6 @@
 
     {{> footer}}
 
-    <script>
-        // Test Ground
-
-        //getFeed(1)
-        getFeeeeeeeeeeed()
-        try {
-            let token = getToken('user')
-            if (checkToken(token)) {
-                document.querySelector("#login_box").innerHTML = `<button class="btn btn-danger font-weight-md text-light btn-lg px-4 btn-rounded" onclick="logout()"><i class="fas fa-user-minus"></i> 로그아웃</button>`
-                document.querySelector("#intro").innerText = '사용자로 로그인 완료'
-            }
-        } catch (error) {
-            
-        }
-
-        
-
-        async function getFeeeeeeeeeeed() {
-            let data = await getFeedRange(0)
-
-            document.querySelector('#logs').innerHTML = JSON.stringify(data)
-        }
-
-        async function appendFeeeeeeeeeeed() {
-            await insertFeed(document.querySelector("#exampleFormControlTextarea1").value)
-
-            setTimeout(() => {
-                Swal.fire({
-                    icon: 'success',
-                    title: '피드 작성 완료',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-            }, 300);
-        }
-    </script>
 
   </body>
 </html>
