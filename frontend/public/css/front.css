@@ -3,6 +3,20 @@
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
 }
+.navbar-toggler {
+    outline: none;
+    border-color: transparent !important;
+    box-shadow: transparent;
+}
+
+.navbar-toggler > .icon-close {
+    display: none;
+}
+
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
 
 .btn-outline-light:hover {
     color: #212529 !important;

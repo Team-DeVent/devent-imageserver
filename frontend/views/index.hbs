@@ -21,7 +21,7 @@
 
     
     <section class="py-5" id="features">
-        <div class="container-fluid px-5 my-5">
+        <div class="container-fluid px-4 my-5">
             <div class="row gx-5">
                 <div class="col-lg-5">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
@@ -65,44 +65,21 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                    <h2 class="h4 fw-bolder">Feed </h2>
+                    <h2 class="h4 fw-bolder">Images </h2>
 
                     <table class="table">
                         <thead>
                             <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Copy URL</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
+                        <tbody id="body_images">
+
                         </tbody>
                     </table>
 
-                    <div class="mb-3">
-                        <textarea class="form-control form-textarea color-gray-100" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
 
-                    <div class="d-grid gap-2">
-                        <button class="btn color-blue-100 text-primary" onclick="appendFeeeeeeeeeeed()">피드 작성</button>
-                    </div>
-
-                    <pre id="logs" style="white-space: pre-wrap;">
-
-                    </pre>
                 </div>
             </div>
         </div>
@@ -112,6 +89,29 @@
  
 
     {{> footer}}
+
+    <script>
+        patchData()
+
+        async function load() {
+            let response = await fetch("/api/images", {
+                method: "GET"
+            });
+
+            let data = response.json();
+            return data
+        }
+
+        async function patchData() {
+            let body = document.querySelector("#body_images")
+            let data = await load()
+            for (i=0; i < data.result.length; i++) {
+                body.insertAdjacentHTML("beforeend", `<tr><td>${data.result[i]}</td><td>${window.location.href}file/${data.result[i]}</td></tr>`)
+            }
+
+        }
+
+    </script>
 
 
   </body>
