@@ -1,10 +1,6 @@
-import jwt from 'jsonwebtoken';
-import data from '../config/jwt.js';
 import registration from '../config/registration.js';
 import request from 'request';
 
-
-let jwtSecret = data.secret;
 
 const check = (req, res, next) => {
   try {  

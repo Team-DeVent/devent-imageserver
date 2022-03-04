@@ -1,6 +1,3 @@
-import jwt from 'jsonwebtoken';
-import data from '../config/jwt.js';
-
 import { readdir } from 'fs/promises';
 
 
