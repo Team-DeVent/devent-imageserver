@@ -5,21 +5,12 @@
     {{> navbar}}
 
 
-    <header class="bg-white py-5">
-        <div class="container px-5 pt-4 pb-2">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-6">
-                    <div class="text-center my-5">
-                        <h1 class="display-5 fw-bolder text-dark font-weight-lg mb-2">이미지 저장소</h1>
-                        <p class="lead text-dark font-weight-md mb-4" id="intro">클라우드 쓰기 번거롭다? 제발 좀 업로드되라? 이런 쓸데없는 걱정 말고 이젠 이미지 서버 하자!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <dds-header 
+        header-title="이미지 저장소"
+        header-sub-title="클라우드 쓰기 번거롭다? 제발 좀 업로드되라? 이런 쓸데없는 걱정 말고 이젠 이미지 서버 하자!">
+    </dds-header>
 
-
-    
+        
     <section class="py-5" id="features">
         <div class="container-fluid px-4 my-5">
             <div class="row gx-5">
@@ -55,11 +46,12 @@
                     <h2 class="h4 fw-bolder">Response</h2>
 
                     <pre id="logs" style="white-space: pre-wrap;">
-{
-    "status": 1,
-    "filename": "1644997335705.png",
-    "filesize": 184914
-}
+
+    {
+        "status": 1,
+        "filename": "1644997335705.png",
+        "filesize": 184914
+    }
                     </pre>
 
                 </div>
